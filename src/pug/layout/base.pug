@@ -4,39 +4,41 @@
 include blocks
 doctype html
 html(lang='ru')
-    head
-        //- Meta
-        meta(charset='utf-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        meta(http-equiv='X-UA-Compatible' content='IE=edge')
-        meta(name='imagetoolbar' content='no')
-        meta(name='msthemecompatible' content='no')
-        meta(name='cleartype' content='on')
-        meta(name='HandheldFriendly' content='True')
-        meta(name='format-detection' content='telephone=no')
-        meta(name='format-detection' content='address=no')
-        meta(name='apple-mobile-web-app-capable' content='yes')
-        meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+	head
+		//- Meta
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='imagetoolbar' content='no')
+		meta(name='msthemecompatible' content='no')
+		meta(name='cleartype' content='on')
+		meta(name='HandheldFriendly' content='True')
 
-        link(href='css/main.css', rel='stylesheet')
+		meta(name='format-detection' content='telephone=no')
+		meta(name='format-detection' content='address=no')
 
-        include head_custom
+		meta(name='apple-mobile-web-app-capable' content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
 
-        block head
 
-    - var bodyClasses = [];
-    block beforeBody
+		include head_custom
 
-    body
+		link(href='css/main.css?' + timestamp rel='stylesheet')
 
-        block header
+		block head
 
-        block content
+	- var bodyClasses = [];
+	block beforeBody
 
-        block footer
+	body(class= bodyClasses)
 
-        block scripts
+		block header
 
-        script(src="js/script.js")
+		block content
 
-        include bottom_custom
+		block footer
+
+		block scripts
+		script(src='js/main.js?' + timestamp, defer="defer")
+
+		include bottom_custom
